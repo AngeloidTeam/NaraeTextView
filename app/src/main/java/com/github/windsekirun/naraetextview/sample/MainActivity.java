@@ -54,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(it);
                     }
+                    
+                    @Override
+                    public void onHashTagLong(String text) {
+                        return false;
+                    }
 
                     @Override
                     public void onMention(String text) {
@@ -61,12 +66,22 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(it);
                     }
+                    
+                    @Override
+                    public void onMentionLong(String text) {
+                        return false;
+                    }
 
                     @Override
                     public void onURL(String text) {
                         Uri uri = Uri.parse(text);
                         Intent it = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(it);
+                    }
+                    
+                    @Override
+                    public void onURLLong(String text) {
+                        return false;
                     }
                 });
             }
