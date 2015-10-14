@@ -25,8 +25,8 @@ public class TwitterLinkPreprocessor {
             }
             
             @Override
-            public boolean onLongClick(String text) {
-                return listener.onHashTagLong(text);
+            public void onLongClick(String text) {
+                listener.onHashTagLong(text);
             }
         });
 
@@ -37,8 +37,8 @@ public class TwitterLinkPreprocessor {
             }
             
             @Override
-            public boolean onLongClick(String text) {
-                return listener.onMentionLong(text);
+            public void onLongClick(String text) {
+                listener.onMentionLong(text);
             }
         });
 
@@ -49,8 +49,8 @@ public class TwitterLinkPreprocessor {
             }
             
             @Override
-            public boolean onLongClick(String text) {
-                return listener.onURLLong(text);
+            public void onLongClick(String text) {
+                listener.onURLLong(text);
             }
         });
 
