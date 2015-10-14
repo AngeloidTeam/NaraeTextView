@@ -12,4 +12,10 @@ public interface OnProcessListener {
     void onMention(String text);
 
     void onURL(String text);
+    
+    boolean onHashTagLong(String text);
+    
+    boolean onMentionLong(String text);
+
+    boolean onURLLong(String text);
 }
