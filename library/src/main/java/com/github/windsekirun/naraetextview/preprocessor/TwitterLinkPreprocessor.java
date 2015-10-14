@@ -23,6 +23,11 @@ public class TwitterLinkPreprocessor {
             public void onClick(String text) {
                 listener.onHashTag(text);
             }
+            
+            @Override
+            public boolean onLongClick(String text) {
+                return listener.onHashTagLong(text);
+            }
         });
 
         Clickable mentionClickable = BuildClickable.getClickableObject(PatternKind.USERNAME, colorset.getMentionColor(), new OnLinkClickListener() {
@@ -30,12 +35,22 @@ public class TwitterLinkPreprocessor {
             public void onClick(String text) {
                 listener.onMention(text);
             }
+            
+            @Override
+            public boolean onLongClick(String text) {
+                return listener.onMentionLong(text);
+            }
         });
 
         Clickable urlClickable = BuildClickable.getClickableObject(PatternKind.HTTP, colorset.getUrlColor(), new OnLinkClickListener() {
             @Override
             public void onClick(String text) {
                 listener.onURL(text);
+            }
+            
+            @Override
+            public boolean onLongClick(String text) {
+                return listener.onURLLong(text);
             }
         });
 
