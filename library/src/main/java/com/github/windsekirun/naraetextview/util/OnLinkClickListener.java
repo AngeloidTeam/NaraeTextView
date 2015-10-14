@@ -9,9 +9,5 @@ public interface OnLinkClickListener {
 
     void onClick(String text);
     
-    /**
-     * @params text: out text
-     * return boolean: if true, execute onCLick after onLongClick.
-     */
-    boolean onLongClick(String text);
+    void onLongClick(String text);
 }
